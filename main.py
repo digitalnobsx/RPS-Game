@@ -3,19 +3,16 @@ import random
 while True:
     options = ["R", "P", "S"]
 
-    print("Starting Game \nThis is a Rock, Paper, Scissors game")
-
     computer = random.choice(options)
     player = None
 
 
-    player = input("Type 'R' for 'Rock', 'P' for 'Paper', and 'S' for 'Scissors': ").upper()
-
-    for letter in player:
-        if letter in options:
-            continue
-    else:
-        print("Invalid Input. Please input R, P, or S: ")
+    while True:
+        player = input("Type 'R' for 'Rock', 'P' for 'Paper', and 'S' for 'Scissors': ").upper()
+        if player in options:
+            break
+        else:
+            print("Invalid Input. Please input R, P, or S: ")
     
     if player == computer:
         print("CPU (",computer + ") : ", end = ' ')
